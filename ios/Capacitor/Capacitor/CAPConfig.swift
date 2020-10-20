@@ -44,8 +44,8 @@
         let parts = key.split(separator: ".")
 
         var object = self.config
-        for (_, key) in parts[0..<parts.count-1].enumerated() {
-            object = self.config![String(key)] as? [String: Any?]
+        for key in parts[0..<parts.count-1] {
+            object = o?[String(key)] as? [String: Any?]
         }
         return object
     }
